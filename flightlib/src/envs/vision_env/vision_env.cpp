@@ -285,6 +285,7 @@ bool VisionEnv::simDynamicObstacles(const Scalar dt) {
   return true;
 }
 
+
 bool VisionEnv::computeReward(Ref<Vector<>> reward) {
   // ---------------------- reward function design
   // - compute collision penalty
@@ -325,6 +326,14 @@ bool VisionEnv::computeReward(Ref<Vector<>> reward) {
   reward << lin_vel_reward, collision_penalty, ang_vel_penalty, survive_rew_,
     total_reward;
   return true;
+}
+
+std::vector<Scalar> VisionEnv::getRelativePosNorm() {
+    return relative_pos_norm_;
+}
+
+std::vector<Scalar> VisionEnv::getObstRadius() {
+    return obstacle_radius_;
 }
 
 bool VisionEnv::isTerminalState(Scalar &reward) {
