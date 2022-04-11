@@ -146,10 +146,10 @@ bool VisionVecEnv<EnvBaseName>::getQuadState(Ref<MatrixRowMajor<>> quadstate) {
 }
 
 template<typename EnvBaseName>
-bool VisionVecEnv<EnvBaseName>::getRelativePosNorm() {
+bool VisionVecEnv<EnvBaseName>::getRadiusRelPosNorm(std::vector<Scalar> relative_pos_norm_, std::vector<Scalar> obstacle_radius_) {
   bool valid = true;
   for (int i = 0; i < this->num_envs_; i++) {
-    valid &= this->envs_[i]->getRelativePosNorm();
+    valid &= this->envs_[i]->getRadiusRelPosNorm(relative_pos_norm_, obstacle_radius_);
   }
   return valid;
 }

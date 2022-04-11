@@ -49,8 +49,6 @@ PYBIND11_MODULE(flightgym, m) {
     .def("getImgWidth", &QuadrotorVecEnv<QuadrotorEnv>::getImgWidth)
     .def("getRewardNames", &QuadrotorVecEnv<QuadrotorEnv>::getRewardNames)
     .def("getExtraInfoNames", &QuadrotorVecEnv<QuadrotorEnv>::getExtraInfoNames)
-    .def("getRelativePosNorm", &QuadrotorVecEnv<QuadrotorEnv>::getRelativePosNorm)
-    .def("getObstRadius", &QuadrotorVecEnv<QuadrotorEnv>::getRelativePosNorm)
     .def("__repr__", [](const QuadrotorVecEnv<QuadrotorEnv>& a) {
       return "RPG Drone Control Environment";
     });
@@ -88,6 +86,7 @@ PYBIND11_MODULE(flightgym, m) {
     .def("getImgWidth", &VisionVecEnv<VisionEnv>::getImgWidth)
     .def("getRewardNames", &VisionVecEnv<VisionEnv>::getRewardNames)
     .def("getExtraInfoNames", &VisionVecEnv<VisionEnv>::getExtraInfoNames)
+    .def("getRadiusRelPosNorm", &VisionVecEnv<VisionEnv>::getRadiusRelPosNorm)
     .def("__repr__", [](const VisionVecEnv<VisionEnv>& a) {
       return "RPG Vision-based Agile Flight Environment";
     });
