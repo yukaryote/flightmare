@@ -45,15 +45,15 @@ template<int rows = Dynamic, int cols = Dynamic>
 using DepthImgMatrixRowMajor =
   Eigen::Matrix<float_t, rows, cols, Eigen::RowMajor>;
 
-// Using shorthand for `Vector<ros>` with scalar type.
+// Using shorthand for `Vector<rows>` with scalar type.
 template<int rows = Dynamic>
 using Vector = Matrix<rows, 1>;
 
-// Using shorthand for `ImgVector<ros>` with scalar type.
+// Using shorthand for `ImgVector<rows>` with scalar type.
 template<int rows = Dynamic>
 using ImgVector = ImgMatrix<rows, 1>;
 
-// Using shorthand for `DepthImgVector<ros>` with scalar type.
+// Using shorthand for `DepthImgVector<rows>` with scalar type.
 template<int rows = Dynamic>
 using DepthImgVector = DepthImgMatrix<rows, 1>;
 

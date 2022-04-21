@@ -69,6 +69,7 @@ class VisionEnv final : public EnvBase {
   // get quadrotor states
   bool getQuadAct(Ref<Vector<>> act) const;
   bool getQuadState(Ref<Vector<>> state) const;
+  bool getRadiusRelPosNorm(Ref<Vector<>> relative_pos_norm_, Ref<Vector<>> obstacle_radius_);
 
   // - auxiliar functions
   bool isTerminalState(Scalar &reward) override;
@@ -127,8 +128,12 @@ class VisionEnv final : public EnvBase {
 
   // max detection range (meter)
   Scalar max_detection_range_;
-  std::vector<Scalar> relative_pos_norm_;
-  std::vector<Scalar> obstacle_radius_;
+  Vector<visionenv::kNObstacles> relative_pos_norm_;
+  Vector<visionenv::kNObstacles> obstacle_radius_;
+  std::vector<Vector<3>, Eigen::aligned_allocator<Vector<3>>> relative_pos_;
+
+  std::vector<Scalar> relative_pos_norm_temp;
+  std::vector<Scalar> obstacle_radius_temp;
 
 
   int num_detected_obstacles_;
