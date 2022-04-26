@@ -347,6 +347,15 @@ bool VisionEnv::computeReward(Ref<Vector<>> reward) {
   // - compute collision penalty
   Scalar collision_penalty = 0.0;
   size_t idx = 0;
+
+  std::cout << "relative pos norm temp = " << std::endl;
+  for (int i = 0; i < relative_pos_norm_temp.size(); i++) {
+    std::cout << relative_pos_norm_temp[i] << "\n";
+    std::cout << obstacle_radius_temp[i] << "\n";
+  }
+
+  //std::cout << "relative pos norm static = " << relative_pos_norm_;
+  //std::cout << "obstacle radius static = " << obstacle_radius_;
   for (size_t sort_idx : sort_indexes(relative_pos_norm_temp)) {
     if (idx >= visionenv::kNObstacles) break;
 
