@@ -205,6 +205,7 @@ class OnPolicyAlgorithm(BaseAlgorithm):
                 return False
 
             self._update_info_buffer(infos)
+            print(n_steps)
             n_steps += 1
 
             if isinstance(self.action_space, gym.spaces.Discrete):
