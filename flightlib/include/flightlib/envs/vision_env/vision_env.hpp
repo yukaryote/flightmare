@@ -130,7 +130,6 @@ class VisionEnv final : public EnvBase {
   Scalar max_detection_range_;
   Vector<visionenv::kNObstacles> relative_pos_norm_;
   Vector<visionenv::kNObstacles> obstacle_radius_;
-  std::vector<Vector<3>, Eigen::aligned_allocator<Vector<3>>> relative_pos_;
 
   std::vector<Scalar> relative_pos_norm_temp;
   std::vector<Scalar> obstacle_radius_temp;

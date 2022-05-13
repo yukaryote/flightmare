@@ -213,7 +213,7 @@ bool VisionEnv::getObstacleState(Ref<Vector<>> obs_state) {
 
   quad_ptr_->getState(&quad_state_);
 
-  std::vector<Vector<3>, Eigen::aligned_allocator<Vector<3>>> relative_pos;
+  std::vector<Vector<3>, Eigen::aligned_allocator<Vector<3>>> relative_pos_;
   // compute relative distance to dynamic obstacles
   for (int i = 0; i < (int)dynamic_objects_.size(); i++) {
     // compute relative position vector
@@ -277,13 +277,13 @@ bool VisionEnv::getObstacleState(Ref<Vector<>> obs_state) {
   for (size_t sort_idx : sort_indexes(relative_pos_norm_temp)) {
     if (idx >= visionenv::kNObstacles) break;
 
-    if (idx < relative_pos.size()) {
+    if (idx < relative_pos_.size()) {
       // if enough obstacles in the environment
       if (relative_pos_norm_temp[sort_idx] <= max_detection_range_) {
         // if obstacles are within detection range
         obs_state.segment<visionenv::kNObstaclesState>(
           idx * visionenv::kNObstaclesState)
-          << relative_pos[sort_idx],
+          << relative_pos_[sort_idx],
           obstacle_radius_temp[sort_idx];
       } else {
         // if obstacles are beyong detection range
