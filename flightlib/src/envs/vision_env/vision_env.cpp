@@ -139,7 +139,7 @@ bool VisionEnv::getObs(Ref<Vector<>> obs) {
   return true;
 }
 
-
+/*
 bool VisionEnv::getRadiusRelPosNorm(Ref<Vector<>> relative_pos_norm_, Ref<Vector<>> obstacle_radius_) {
     // make sure to reset the collision penalty
   relative_pos_norm_.setZero();
@@ -201,7 +201,7 @@ bool VisionEnv::getRadiusRelPosNorm(Ref<Vector<>> relative_pos_norm_, Ref<Vector
   }
   return true;
 }
-
+*/
 
 bool VisionEnv::getObstacleState(Ref<Vector<>> obs_state) {
   if (dynamic_objects_.size() <= 0 || static_objects_.size() <= 0) {

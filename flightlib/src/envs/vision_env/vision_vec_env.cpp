@@ -144,7 +144,7 @@ bool VisionVecEnv<EnvBaseName>::getQuadState(Ref<MatrixRowMajor<>> quadstate) {
   }
   return valid;
 }
-
+/*
 template<typename EnvBaseName>
 bool VisionVecEnv<EnvBaseName>::getRadiusRelPosNorm(Ref<MatrixRowMajor<>> relative_pos_norm_, Ref<MatrixRowMajor<>> obstacle_radius_) {
   bool valid = true;
@@ -153,7 +153,7 @@ bool VisionVecEnv<EnvBaseName>::getRadiusRelPosNorm(Ref<MatrixRowMajor<>> relati
   }
   return valid;
 }
-
+*/
 
 template<typename EnvBaseName>
 VisionVecEnv<EnvBaseName>::~VisionVecEnv() {}
